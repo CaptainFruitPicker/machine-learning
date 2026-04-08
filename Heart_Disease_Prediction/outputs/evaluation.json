@@ -1,0 +1,16 @@
+{
+  "accuracy": 0.8704,
+  "precision": 0.8696,
+  "recall": 0.8333,
+  "f1": 0.8511,
+  "confusion_matrix": {
+    "tn": 27,
+    "fp": 3,
+    "fn": 4,
+    "tp": 20
+  },
+  "evaluation_samples": 54,
+  "seed": 42,
+  "test_size": 0.2,
+  "model_path": "C:\\Users\\钱程远\\Desktop\\学习\\项目1\\Heart_Disease_Prediction\\models\\logistic_model.pkl"
+}

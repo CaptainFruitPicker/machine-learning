@@ -1,0 +1,3 @@
+﻿numpy
+pandas
+openpyxl
