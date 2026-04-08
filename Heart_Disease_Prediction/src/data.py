@@ -8,7 +8,7 @@ import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA_PATH = Path(r"C:\Users\钱程远\Desktop\Heart_Disease_Prediction.xlsx")
+DEFAULT_DATA_PATH = PROJECT_ROOT / "data" / "raw" / "Heart_Disease_Prediction.xlsx"
 
 CANONICAL_COLUMNS = {
     "Age": "age",
@@ -33,6 +33,7 @@ LOOKUP_COLUMNS = {
 }
 
 TARGET_COLUMN = "heart_disease"
+EXCLUDED_FEATURE_COLUMNS = {"1", "ca1_extra", "artifact_1"}
 
 
 def _fallback_column_name(name: str) -> str:
@@ -44,7 +45,12 @@ def _fallback_column_name(name: str) -> str:
 def _canonical_column_name(name: str) -> str:
     original = str(name).strip()
     lookup_key = re.sub(r"[^\w]+", "", original.casefold())
-    return LOOKUP_COLUMNS.get(lookup_key, _fallback_column_name(original))
+    canonical = LOOKUP_COLUMNS.get(lookup_key, _fallback_column_name(original))
+
+    if re.fullmatch(r"\d+", canonical):
+        return f"artifact_{canonical}"
+
+    return canonical
 
 
 def read_dataframe(path: str | Path | None = None) -> pd.DataFrame:
@@ -85,7 +91,9 @@ def prepare_dataset(path: str | Path | None = None) -> tuple[np.ndarray, np.ndar
     if target.isna().any():
         raise ValueError("Target column contains unsupported labels.")
 
-    feature_columns = [column for column in df.columns if column != TARGET_COLUMN]
+    feature_columns = [
+        column for column in df.columns if column != TARGET_COLUMN and column not in EXCLUDED_FEATURE_COLUMNS
+    ]
     features = df[feature_columns].apply(pd.to_numeric, errors="coerce")
     features = features.fillna(features.median(numeric_only=True))
     features = features.fillna(0.0)

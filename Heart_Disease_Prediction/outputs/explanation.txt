@@ -1,17 +1,16 @@
-Heart disease model explanation
-Model path: C:\Users\钱程远\Desktop\学习\项目1\Heart_Disease_Prediction\models\logistic_model.pkl
+Heart Disease Risk Model Summary
+Model artifact: models\logistic_model.pkl
 Training seed: 42
 
-Top risk-increasing features:
-- number_of_vessels_fluro: coefficient=0.9141
-- thallium: coefficient=0.7736
-- chest_pain_type: coefficient=0.5797
-- st_depression: coefficient=0.4915
-- ekg_results: coefficient=0.3849
+Top factors associated with higher predicted risk:
+- Number of Major Vessels: coefficient=0.9172
+- Thallium Test Result: coefficient=0.7742
+- Chest Pain Type: coefficient=0.5803
+- ST Depression: coefficient=0.4943
+- Resting ECG Result: coefficient=0.3809
 
-Top risk-decreasing features:
-- max_hr: coefficient=-0.4404
-- 1: coefficient=-0.1410
-- age: coefficient=-0.1309
-- sex: coefficient=-0.1077
-- fbs_over_120: coefficient=-0.0526
+Top factors associated with lower predicted risk:
+- Maximum Heart Rate: coefficient=-0.4426
+- Age: coefficient=-0.1330
+- Sex: coefficient=-0.1082
+- Fasting Blood Sugar > 120: coefficient=-0.0501

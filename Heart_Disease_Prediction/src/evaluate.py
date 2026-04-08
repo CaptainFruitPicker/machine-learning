@@ -13,6 +13,15 @@ DEFAULT_MODEL_PATH = PROJECT_ROOT / "models" / "logistic_model.pkl"
 DEFAULT_EVAL_PATH = PROJECT_ROOT / "outputs" / "evaluation.json"
 
 
+def _display_path(path: Path) -> str:
+    resolved = path.resolve()
+
+    try:
+        return str(resolved.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(resolved)
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate the trained heart disease model.")
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA_PATH, help="Path to the dataset.")
@@ -37,7 +46,7 @@ def main() -> None:
             "evaluation_samples": int(len(x_test)),
             "seed": seed,
             "test_size": test_size,
-            "model_path": str(args.model),
+            "model_path": _display_path(args.model),
         }
     )
 

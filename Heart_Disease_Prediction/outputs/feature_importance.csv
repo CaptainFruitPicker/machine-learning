@@ -1,15 +1,14 @@
-feature,coefficient,absolute_importance,direction
-number_of_vessels_fluro,0.9140878164399463,0.9140878164399463,increases_risk
-thallium,0.7735917598390316,0.7735917598390316,increases_risk
-chest_pain_type,0.5796674053046075,0.5796674053046075,increases_risk
-st_depression,0.49152306690953596,0.49152306690953596,increases_risk
-max_hr,-0.440370018277193,0.440370018277193,decreases_risk
-ekg_results,0.3849112670244952,0.3849112670244952,increases_risk
-bp,0.342639767257889,0.342639767257889,increases_risk
-exercise_angina,0.23695818544619332,0.23695818544619332,increases_risk
-1,-0.14099912935042974,0.14099912935042974,decreases_risk
-cholesterol,0.13840090869394125,0.13840090869394125,increases_risk
-age,-0.13087450018291705,0.13087450018291705,decreases_risk
-sex,-0.10770009565394477,0.10770009565394477,decreases_risk
-slope_of_st,0.08370054059960075,0.08370054059960075,increases_risk
-fbs_over_120,-0.052648625103039574,0.052648625103039574,decreases_risk
+feature,display_name,coefficient,absolute_importance,direction
+number_of_vessels_fluro,Number of Major Vessels,0.917195015381241,0.917195015381241,increases_risk
+thallium,Thallium Test Result,0.7741830973068455,0.7741830973068455,increases_risk
+chest_pain_type,Chest Pain Type,0.5802993029516721,0.5802993029516721,increases_risk
+st_depression,ST Depression,0.4943316660584628,0.4943316660584628,increases_risk
+max_hr,Maximum Heart Rate,-0.44263213349299685,0.44263213349299685,decreases_risk
+ekg_results,Resting ECG Result,0.38093117181275915,0.38093117181275915,increases_risk
+bp,Resting Blood Pressure,0.34437280456039737,0.34437280456039737,increases_risk
+exercise_angina,Exercise-Induced Angina,0.2398312018986823,0.2398312018986823,increases_risk
+cholesterol,Cholesterol,0.139591505420573,0.139591505420573,increases_risk
+age,Age,-0.13297902323932623,0.13297902323932623,decreases_risk
+sex,Sex,-0.10815348858269241,0.10815348858269241,decreases_risk
+slope_of_st,ST Segment Slope,0.07837567026754018,0.07837567026754018,increases_risk
+fbs_over_120,Fasting Blood Sugar > 120,-0.050095030321942687,0.050095030321942687,decreases_risk

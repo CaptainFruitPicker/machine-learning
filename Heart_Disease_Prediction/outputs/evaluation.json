@@ -12,5 +12,5 @@
   "evaluation_samples": 54,
   "seed": 42,
   "test_size": 0.2,
-  "model_path": "C:\\Users\\钱程远\\Desktop\\学习\\项目1\\Heart_Disease_Prediction\\models\\logistic_model.pkl"
+  "model_path": "models\\logistic_model.pkl"
 }
